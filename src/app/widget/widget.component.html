@@ -1,0 +1,22 @@
+<div [class]="isCard ? 'card' : 'mt-3'" class="p">
+    <div class="widget-container" [style.width]="widgetSize" [style.height]="widgetSize">
+      <div class="flip-icon" (click)="flipCard($event)">
+        <div class="ph ph-flip-horizontal" [class.flipped]="flipped"></div>
+      </div>
+      <div class="widget" [class.flipped]="flipped" [style.transition]="flipDuration">
+        <div class="front">
+          <i *ngIf="frontIcon">
+            <div [class]="frontIcon"></div>
+          </i>
+          <div *ngIf="!frontIcon">{{ frontText }}</div>
+        </div>
+        <div class="back">
+          <i *ngIf="backIcon">
+            <div [class]="backIcon"></div>
+          </i>
+          <div *ngIf="!backIcon">{{ backText }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

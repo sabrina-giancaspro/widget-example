@@ -1,0 +1,63 @@
+@import 'variables';
+
+.widget-container {
+  width: $widget-size;
+  height: $widget-size;
+  margin: 80px auto;
+  border-radius: $border-radius;
+  perspective: 1500px;
+  position: relative;
+  background-color: $widget-background-color;
+}
+
+.widget {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform $flip-duration ease-in-out;
+}
+
+.front, .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius;
+  backface-visibility: hidden;
+}
+
+.front {
+  background-color: $front-background-color;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: $back-background-color;
+}
+
+.widget.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-icon, .remove-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: $icon-size;
+  cursor: pointer;
+  z-index: 10;
+  color: $icon-color;
+}
+
+.widget-container:hover {
+  box-shadow: 0 $shadow-depth $shadow-depth rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.widget-container:hover .flip-icon, .widget-container:hover .remove-icon {
+  transform: scale(1.1);
+}
