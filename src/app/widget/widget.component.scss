@@ -44,7 +44,7 @@
   transform: rotateY(180deg);
 }
 
-.flip-icon, .remove-icon {
+.flip-icon {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -58,6 +58,6 @@
   box-shadow: 0 $shadow-depth $shadow-depth rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-.widget-container:hover .flip-icon, .widget-container:hover .remove-icon {
+.widget-container:hover .flip-icon, .widget-container:hover {
   transform: scale(1.1);
 }
