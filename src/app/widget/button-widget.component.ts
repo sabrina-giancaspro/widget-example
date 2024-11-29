@@ -1,11 +1,11 @@
 import { Component, HostListener, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-widget',
-  templateUrl: './widget.component.html',
-  styleUrls: ['./widget.component.scss']
+  selector: 'app-btn-widget',
+  templateUrl: './button-widget.component.html',
+  styleUrls: ['./button-widget.component.scss']
 })
-export class WidgetComponent {
+export class ButtonWidgetComponent {
   @Input() isCard: boolean = true;
   @Input() flipped: boolean = false;
   @Input() frontIcon: string = '';

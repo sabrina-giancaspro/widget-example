@@ -10,10 +10,6 @@
   background-color: $widget-background-color;
   overflow: visible;
   margin-left: 30px;
-
-  &:hover {
-    box-shadow: 0 $shadow-depth $shadow-depth rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.2);
-  }
 }
 
 .widget {
@@ -22,10 +18,6 @@
   height: 100%;
   transform-style: preserve-3d;
   transition: transform $flip-duration ease-in-out;
-
-  &.flipped {
-    transform: rotateY(180deg);
-  }
 }
 
 .front, .back {
@@ -50,6 +42,10 @@
   background-color: $back-background-color;
 }
 
+.widget.flipped, .flip-icon {
+  transform: rotateY(180deg);
+}
+
 .flip-icon {
   position: absolute;
   top: 10px;
@@ -59,26 +55,23 @@
   z-index: 10;
   color: $icon-color;
   transition: transform $flip-duration ease-in-out;
-
-  &.flipped {
-    transform: rotateY(180deg);
-  }
 }
 
 .drag-icon {
   font-size: $icon-size;
   position: absolute;
   top: 50%;
+  left: 10px;
   transform: translateY(-50%);
-  z-index: 20;
+  z-index: 20; 
   color: $icon-color;
   cursor: pointer;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 }
 
-.widget-container:hover .flip-icon .drag-icon {
-  transform: scale(1.1);
+.widget-container:hover {
+  box-shadow: 0 $shadow-depth $shadow-depth rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.116);
+}
+
+.widget-container:hover{
+  transform: scale(1); 
 }

@@ -1,21 +1,26 @@
 <div [class]="isCard ? 'card' : 'mt-3'" class="p" 
     [ngStyle]="{ position: 'absolute', left: positionX + 'px', top: positionY + 'px' }">
   <div class="widget-container" [style.width]="widgetSize" [style.height]="widgetSize">
-    <div class="drag-icon">
-      <div class="ph ph-dots-six-vertical"(mousedown)="startDrag($event)"></div>
-    </div>
-    <div class="flip-icon" (click)="flipCard($event)">
-      <div class="ph ph-flip-horizontal" [class.flipped]="flipped"></div>
-    </div>
-
     <div class="widget" [class.flipped]="flipped" [style.transition]="flipDuration">
       <div class="front">
+        <div class="drag-icon">
+          <div class="ph ph-dots-six-vertical"(mousedown)="startDrag($event)"></div>
+        </div>
+        <div class="flip-icon" (click)="flipCard($event)">
+          <div class="ph ph-flip-horizontal" [class.flipped]="flipped" ></div>
+        </div>
         <i *ngIf="frontIcon">
           <div [class]="frontIcon"></div>
         </i>
         <div *ngIf="!frontIcon">{{ frontText }}</div>
       </div>
       <div class="back">
+        <div class="drag-icon">
+          <div class="ph ph-dots-six-vertical"(mousedown)="startDrag($event)"></div>
+        </div>
+        <div class="flip-icon" (click)="flipCard($event)">
+          <div class="ph ph-flip-horizontal" [class.flipped]="flipped" ></div>
+        </div>
         <i *ngIf="backIcon">
           <div [class]="backIcon"></div>
         </i>
